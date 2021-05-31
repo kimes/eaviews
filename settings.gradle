@@ -1,0 +1,3 @@
+rootProject.name = "EAViews"
+include ':app'
+include ':eaviews'

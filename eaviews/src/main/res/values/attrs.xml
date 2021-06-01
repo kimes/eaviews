@@ -39,4 +39,15 @@
     <declare-styleable name="ErrorSpinner" parent="ErrorEdiText">
         <attr name="state_error" />
     </declare-styleable>
+    <declare-styleable name="DangoSkewerView">
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="circleColor" format="color" />
+        <attr name="hideTail" format="boolean" />
+        <attr name="value" format="integer" />
+        <attr name="circleSize" format="dimension" />
+        <attr name="circleStrokeWidth" format="dimension" />
+        <attr name="headHeight" format="dimension" />
+        <attr name="tailHeight" format="dimension" />
+    </declare-styleable>
 </resources>

@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatEditText;
 
+import java.util.regex.Pattern;
+
 import ph.easyaf.eaviews.R;
 
 public class ErrorEditText extends AppCompatEditText implements TextWatcher {

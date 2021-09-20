@@ -57,6 +57,7 @@ public class CurrencyEditText extends AppCompatEditText {
 
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
+        super.onSelectionChanged(selStart, selEnd);
         setSelection(getText().length());
         //super.onSelectionChanged(selStart, selEnd);
     }

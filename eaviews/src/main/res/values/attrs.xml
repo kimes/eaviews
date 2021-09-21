@@ -42,6 +42,7 @@
     <declare-styleable name="ValidationEditText">
         <attr name="state_error" />
         <attr name="state_touched" format="boolean" />
+        <attr name="state_submitted" format="boolean" />
         <attr name="regex" format="string" />
     </declare-styleable>
     <declare-styleable name="DangoSkewerView">

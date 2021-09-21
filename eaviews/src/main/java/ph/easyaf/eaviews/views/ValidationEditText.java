@@ -17,8 +17,14 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
 
     private static final int[] STATE_ERROR = { R.attr.state_error };
     private static final int[] STATE_TOUCHED = { R.attr.state_touched };
+    private static final int[] STATE_SUBMITTED = { R.attr.state_submitted };
 
-    private boolean hasError = true, hasTouched = false;
+    private OnIsSubmittedChangedListener onIsSubmittedChangedListener;
+    public void setOnIsSubmittedChangedListener(OnIsSubmittedChangedListener onIsSubmittedChangedListener) {
+        this.onIsSubmittedChangedListener = onIsSubmittedChangedListener;
+    }
+
+    private boolean hasError = true, hasTouched = false, isSubmitted = false;
     private String regex = "";
 
     public ValidationEditText(Context context) {
@@ -48,6 +54,9 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
         if (hasTouched) {
             mergeDrawableStates(drawableState, STATE_TOUCHED);
         }
+        if (isSubmitted) {
+            mergeDrawableStates(drawableState, STATE_SUBMITTED);
+        }
         return drawableState;
     }
 
@@ -71,6 +80,17 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
 
     public boolean getHasError() { return hasError; }
     public boolean getHasTouched() { return hasTouched; }
+    public boolean getIsSubmitted() { return isSubmitted; }
     public String getRegex() { return regex; }
     public void setRegex(String regex) { this.regex = regex; }
+    public void setIsSubmitted(boolean isSubmitted) {
+        this.isSubmitted = isSubmitted;
+        if (onIsSubmittedChangedListener != null)
+            onIsSubmittedChangedListener.onIsSubmittedChanged(this, this.isSubmitted);
+        refreshDrawableState();
+    }
+
+    public interface OnIsSubmittedChangedListener {
+        void onIsSubmittedChanged(ValidationEditText editText, boolean hasSubmitted);
+    }
 }

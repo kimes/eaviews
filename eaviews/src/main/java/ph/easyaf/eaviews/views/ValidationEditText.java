@@ -46,7 +46,7 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
 
     protected int[] onCreateDrawableState(int extraSpace) {
         // extraSpace + {{ number of custom states }}
-        final int[] drawableState = super.onCreateDrawableState(extraSpace + 2);
+        final int[] drawableState = super.onCreateDrawableState(extraSpace + 3);
 
         if (hasError) {
             mergeDrawableStates(drawableState, STATE_ERROR);

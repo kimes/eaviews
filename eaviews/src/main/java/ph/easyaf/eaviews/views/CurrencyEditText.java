@@ -14,6 +14,12 @@ import java.text.DecimalFormat;
 
 public class CurrencyEditText extends AppCompatEditText {
 
+    private OnCurrencyAmountChangedListener onCurrencyAmountChangedListener;
+    public void setOnCurrencyAmountChangedListener(
+            OnCurrencyAmountChangedListener onCurrencyAmountChangedListener) {
+        this.onCurrencyAmountChangedListener = onCurrencyAmountChangedListener;
+    }
+
     private String prevText = "A";
     private TextWatcher textWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -40,6 +46,9 @@ public class CurrencyEditText extends AppCompatEditText {
             setText(formatText);
             setSelection(formatText.length());
             addTextChangedListener(this);
+
+            if (onCurrencyAmountChangedListener != null)
+                onCurrencyAmountChangedListener.onCurrencyAmountChanged(CurrencyEditText.this);
         }
     };
 
@@ -69,5 +78,9 @@ public class CurrencyEditText extends AppCompatEditText {
         } else {
             removeTextChangedListener(textWatcher);
         }
+    }
+
+    public interface OnCurrencyAmountChangedListener {
+        void onCurrencyAmountChanged(CurrencyEditText currencyEditText);
     }
 }

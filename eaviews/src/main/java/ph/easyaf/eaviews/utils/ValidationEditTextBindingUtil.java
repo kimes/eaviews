@@ -10,7 +10,7 @@ public class ValidationEditTextBindingUtil {
 
     @BindingAdapter("isSubmittedAttrChanged")
     public static void setIsSubmittedListener(ValidationEditText editText,
-                                               final InverseBindingListener bindingListener) {
+                                                final InverseBindingListener bindingListener) {
         editText.setOnIsSubmittedChangedListener((editText1, isSubmitted) -> {
             if (bindingListener != null) bindingListener.onChange();
         });

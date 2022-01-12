@@ -39,6 +39,10 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ValidationEditText);
         try {
             regex = a.getString(R.styleable.ValidationEditText_regex);
+
+            String text = getText() != null ? getText().toString() : "";
+            if (Pattern.matches(regex, text)) hasError = false;
+            else hasError = true;
         } finally {
             a.recycle();
         }

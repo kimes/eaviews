@@ -24,6 +24,11 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
         this.onIsSubmittedChangedListener = onIsSubmittedChangedListener;
     }
 
+    private OnHasErrorChangedListener onHasErrorChangedListener;
+    public void setOnHasErrorChangedListener(OnHasErrorChangedListener onHasErrorChangedListener) {
+        this.onHasErrorChangedListener = onHasErrorChangedListener;
+    }
+
     private boolean hasError = true, hasTouched = false, isSubmitted = false;
     private String regex = "";
 
@@ -68,7 +73,11 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
         String text = s.toString();
         if (!Pattern.matches(regex, text)) hasError = true;
         else hasError = false;
+
         refreshDrawableState();
+
+        if (onHasErrorChangedListener != null)
+            onHasErrorChangedListener.onHasErrorChanged(this, hasError);
     }
 
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -96,5 +105,9 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
 
     public interface OnIsSubmittedChangedListener {
         void onIsSubmittedChanged(ValidationEditText editText, boolean hasSubmitted);
+    }
+
+    public interface OnHasErrorChangedListener {
+        void onHasErrorChanged(ValidationEditText editText, boolean hasError);
     }
 }

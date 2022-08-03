@@ -13,7 +13,7 @@
         app:tailHeight="5dp"
         app:circleSize="50dp"
         app:circleStrokeWidth="3dp"
-        app:circleColor="@color/gray40"
+        app:circleColor="@color/gray30"
         app:strokeWidth="2dp"
         app:value="85" />
 

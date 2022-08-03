@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="blue10">#1C4058</color>
+    <color name="blue20">#4F708A</color>
+    <color name="blue30">#00BCFB</color>
+    <color name="blue40">#70DBFF</color>
+    <color name="blue50">#ADEBFF</color>
+    <color name="blue60">#E1EFF3</color>
+
+    <color name="gray10">#4F4F4F</color>
+    <color name="gray20">#828282</color>
+    <color name="gray30">#BDBDBD</color>
+    <color name="gray40">#E0E0E0</color>
+    <color name="gray50">#F2F2F2</color>
+
+    <color name="orange10">#FC502A</color>
+    <color name="orange20">#E08A00</color>
+    <color name="orange30">#F59700</color>
+    <color name="orange40">#FFB02D</color>
+    <color name="orange50">#FFD085</color>
+    <color name="orange60">#FFE0AD</color>
+    <!--
     <color name="blue10">#2C6188</color>
     <color name="blue20">#1C4058</color>
     <color name="gray40">#BDBDBD</color>
-    <color name="gray50">#E0E0E0</color>
+    <color name="gray50">#E0E0E0</color> -->
 
     <color name="error">#EB5757</color>
     <color name="success">#8BC53D</color>

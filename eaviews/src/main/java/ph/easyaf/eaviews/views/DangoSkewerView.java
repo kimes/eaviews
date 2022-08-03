@@ -18,7 +18,7 @@ public class DangoSkewerView extends View {
 
     private boolean hideTail = false;
     private int width = 50, height = 50, value = 0;
-    private int strokeColor = R.color.blue10, circleColor = R.color.blue10;
+    private int strokeColor = R.color.blue20, circleColor = R.color.blue20;
     private int headHeight = 35, circleSize = 50, tailHeight = 5;
 
     private float circleStrokeWidth = 5f, strokeWidth = 2f;
@@ -40,9 +40,9 @@ public class DangoSkewerView extends View {
 
             strokeWidth = a.getDimension(R.styleable.DangoSkewerView_strokeWidth, 2f);
             strokeColor = a.getColor(R.styleable.DangoSkewerView_strokeColor,
-                    getResources().getColor(R.color.blue10));
+                    getResources().getColor(R.color.blue20));
             circleColor = a.getColor(R.styleable.DangoSkewerView_circleColor,
-                    getResources().getColor(R.color.blue10));
+                    getResources().getColor(R.color.blue20));
             circleStrokeWidth = a.getDimension(R.styleable.DangoSkewerView_circleStrokeWidth, 5f);
             value = a.getInteger(R.styleable.DangoSkewerView_value, 0);
         } finally {

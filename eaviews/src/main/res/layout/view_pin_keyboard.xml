@@ -113,7 +113,7 @@
             android:layout_rowWeight="1"
             android:padding="5dp"
             android:src="@drawable/ic_backspace"
-            android:tint="@color/blue10"
+            android:tint="@color/blue20"
             android:scaleType="fitCenter"
             style="@style/KeyboardButton" />
         <!-- android:src="@drawable/ic_backspace" -->
@@ -140,7 +140,7 @@
             android:layout_row="3"
             android:layout_rowWeight="1"
             android:padding="5dp"
-            android:tint="@color/blue10"
+            android:tint="@color/blue20"
             android:src="@drawable/ic_next"
             android:scaleType="fitCenter"
             style="@style/KeyboardButton" />

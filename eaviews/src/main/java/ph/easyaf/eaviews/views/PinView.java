@@ -30,7 +30,7 @@ public abstract class PinView extends LinearLayoutCompat {
 
     protected static final int DEFAULT_PIN_LENGTH = 4;
 
-    protected int state = DEFAULT, stateDefaultBackground = R.color.gray40,
+    protected int state = DEFAULT, stateDefaultBackground = R.color.gray30,
             stateSuccessBackground = R.color.success,
             stateErrorBackground = R.color.error;
 
@@ -67,7 +67,7 @@ public abstract class PinView extends LinearLayoutCompat {
         try {
             state = a.getInt(R.styleable.PinView_state, DEFAULT);
             stateDefaultBackground = a.getResourceId(R.styleable.PinView_stateDefaultBackground,
-                    R.color.gray40);
+                    R.color.gray30);
             stateSuccessBackground = a.getResourceId(R.styleable.PinView_stateSuccessBackground,
                     R.color.success);
             stateErrorBackground = a.getResourceId(R.styleable.PinView_stateErrorBackground,

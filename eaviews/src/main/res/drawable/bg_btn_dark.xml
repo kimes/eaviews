@@ -5,7 +5,7 @@
             <item>
                 <shape android:shape="rectangle">
                     <corners android:radius="@dimen/radiusSmall" />
-                    <solid android:color="@color/blue20" />
+                    <solid android:color="@color/blue10" />
                 </shape>
             </item>
         </ripple>
@@ -14,13 +14,13 @@
         android:state_enabled="true">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/radiusSmall" />
-            <solid android:color="@color/blue20" />
+            <solid android:color="@color/blue10" />
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/radiusSmall" />
-            <solid android:color="@color/gray50" />
+            <solid android:color="@color/gray40" />
         </shape>
     </item>
 </selector>

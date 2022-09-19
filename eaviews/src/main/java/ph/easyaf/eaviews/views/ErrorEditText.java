@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 import ph.easyaf.eaviews.R;
 
-public class ErrorEditText extends AppCompatEditText implements TextWatcher {
+public class ErrorEditText extends TypingEditText implements TextWatcher {
 
     private static final int TYPING_INTERVAL = 800;
 
@@ -24,18 +24,7 @@ public class ErrorEditText extends AppCompatEditText implements TextWatcher {
         this.onHasErrorChangedListener = onHasErrorChangedListener;
     }
 
-    private OnTypingChangedListener onTypingChangedListener;
-    public void setOnTypingChangedListener(OnTypingChangedListener onTypingChangedListener) {
-        this.onTypingChangedListener = onTypingChangedListener;
-    }
-
     private boolean hasError = true;
-
-    private Handler handler = new Handler();
-
-    private Runnable notifier = () -> {
-        if (onTypingChangedListener != null) onTypingChangedListener.onTyping(this, false);
-    };
 
     public ErrorEditText(Context context) {
         super(context);
@@ -55,8 +44,7 @@ public class ErrorEditText extends AppCompatEditText implements TextWatcher {
 
     public void setHasError(boolean error) {
         hasError = error;
-        if (onHasErrorChangedListener != null)
-            onHasErrorChangedListener.onHasErrorChanged(this, hasError);
+        if (onHasErrorChangedListener != null) onHasErrorChangedListener.onHasErrorChanged(this, hasError);
         refreshDrawableState();
     }
 
@@ -82,9 +70,5 @@ public class ErrorEditText extends AppCompatEditText implements TextWatcher {
 
     public interface OnHasErrorChangedListener {
         void onHasErrorChanged(ErrorEditText editText, boolean hasError);
-    }
-
-    public interface OnTypingChangedListener {
-        void onTyping(ErrorEditText editText, boolean isTyping);
     }
 }

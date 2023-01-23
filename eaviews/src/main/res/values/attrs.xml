@@ -49,6 +49,7 @@
         <attr name="strokeWidth" format="dimension" />
         <attr name="strokeColor" format="color" />
         <attr name="circleColor" format="color" />
+        <attr name="circleStrokeColor" format="color" />
         <attr name="hideTail" format="boolean" />
         <attr name="value" format="integer" />
         <attr name="circleSize" format="dimension" />

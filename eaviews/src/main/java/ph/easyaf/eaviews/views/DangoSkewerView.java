@@ -18,7 +18,7 @@ public class DangoSkewerView extends View {
 
     private boolean hideTail = false;
     private int width = 50, height = 50, value = 0;
-    private int strokeColor = R.color.blue20, circleColor = R.color.blue20;
+    private int strokeColor = R.color.blue20, circleStrokeColor = R.color.blue20, circleColor = R.color.blue20;
     private int headHeight = 35, circleSize = 50, tailHeight = 5;
 
     private float circleStrokeWidth = 5f, strokeWidth = 2f;
@@ -40,6 +40,8 @@ public class DangoSkewerView extends View {
 
             strokeWidth = a.getDimension(R.styleable.DangoSkewerView_strokeWidth, 2f);
             strokeColor = a.getColor(R.styleable.DangoSkewerView_strokeColor,
+                    getResources().getColor(R.color.blue20));
+            circleStrokeColor = a.getColor(R.styleable.DangoSkewerView_circleStrokeColor,
                     getResources().getColor(R.color.blue20));
             circleColor = a.getColor(R.styleable.DangoSkewerView_circleColor,
                     getResources().getColor(R.color.blue20));
@@ -63,7 +65,7 @@ public class DangoSkewerView extends View {
         paintCircle.setAntiAlias(true);
         paintCircle.setStyle(Paint.Style.STROKE);
         paintCircle.setStrokeWidth(circleStrokeWidth);
-        paintCircle.setColor(strokeColor);
+        paintCircle.setColor(circleStrokeColor);
 
         paintCircleFill = new Paint();
         paintCircleFill.setAntiAlias(true);
@@ -186,7 +188,14 @@ public class DangoSkewerView extends View {
 
     public int getStrokeColor() { return strokeColor; }
     public void setStrokeColor(int color) {
+        strokeColor = color;
         paint.setColor(color);
+        invalidate();
+    }
+
+    public int getCircleStrokeColor() { return circleStrokeColor; }
+    public void setCircleStrokeColor(int color) {
+        circleStrokeColor = color;
         paintCircle.setColor(color);
         invalidate();
     }

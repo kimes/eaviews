@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-public class CurrencyEditText extends AppCompatEditText {
+public class CurrencyEditText extends TypingEditText {
 
     private OnCurrencyAmountChangedListener onCurrencyAmountChangedListener;
     public void setOnCurrencyAmountChangedListener(
@@ -49,6 +49,12 @@ public class CurrencyEditText extends AppCompatEditText {
 
             if (onCurrencyAmountChangedListener != null)
                 onCurrencyAmountChangedListener.onCurrencyAmountChanged(CurrencyEditText.this);
+
+            if (onTypingChangedListener != null) {
+                onTypingChangedListener.onTyping(CurrencyEditText.this, true);
+                handler.removeCallbacks(notifier);
+                handler.postDelayed(notifier, TYPING_INTERVAL);
+            }
         }
     };
 

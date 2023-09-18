@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 import ph.easyaf.eaviews.R;
 
-public class ValidationEditText extends AppCompatEditText implements TextWatcher {
+public class ValidationEditText extends TypingEditText implements TextWatcher {
 
     protected static final int[] STATE_ERROR = { R.attr.state_error };
     protected static final int[] STATE_TOUCHED = { R.attr.state_touched };
@@ -69,15 +69,21 @@ public class ValidationEditText extends AppCompatEditText implements TextWatcher
         return drawableState;
     }
 
-        public void afterTextChanged(Editable s) {
-            String text = s.toString();
-            if (!Pattern.matches(regex, text)) hasError = true;
-            else hasError = false;
+    public void afterTextChanged(Editable s) {
+        String text = s.toString();
+        if (!Pattern.matches(regex, text)) hasError = true;
+        else hasError = false;
 
-            refreshDrawableState();
+        refreshDrawableState();
 
-            if (onHasErrorChangedListener != null)
-                onHasErrorChangedListener.onHasErrorChanged(this, hasError);
+        if (onHasErrorChangedListener != null)
+            onHasErrorChangedListener.onHasErrorChanged(this, hasError);
+
+        if (onTypingChangedListener != null) {
+            onTypingChangedListener.onTyping(this, true);
+            handler.removeCallbacks(notifier);
+            handler.postDelayed(notifier, TYPING_INTERVAL);
+        }
     }
 
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

@@ -15,9 +15,7 @@ import ph.easyaf.eaviews.R;
 
 public class ErrorEditText extends TypingEditText implements TextWatcher {
 
-    private static final int TYPING_INTERVAL = 800;
-
-    private static final int[] STATE_ERROR = { R.attr.state_error };
+    protected static final int[] STATE_ERROR = { R.attr.state_error };
 
     private OnHasErrorChangedListener onHasErrorChangedListener;
     public void setOnHasErrorChangedListener(OnHasErrorChangedListener onHasErrorChangedListener) {
@@ -33,6 +31,15 @@ public class ErrorEditText extends TypingEditText implements TextWatcher {
 
     public ErrorEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
+        addTextChangedListener(this);
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs, R.styleable.ErrorEditText,
+                0, 0);
+    }
+
+    public ErrorEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         addTextChangedListener(this);
 
         TypedArray a = context.getTheme().obtainStyledAttributes(

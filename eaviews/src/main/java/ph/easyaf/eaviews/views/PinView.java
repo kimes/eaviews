@@ -31,8 +31,8 @@ public abstract class PinView extends LinearLayoutCompat {
     protected static final int DEFAULT_PIN_LENGTH = 4;
 
     protected int state = DEFAULT, stateDefaultBackground = R.color.gray30,
-            stateSuccessBackground = R.color.success,
-            stateErrorBackground = R.color.error;
+            stateSuccessBackground = R.color.green20,
+            stateErrorBackground = R.color.red20;
 
     protected boolean password = true, isOpenKeyboard = true;
     protected int inputType = EditorInfo.TYPE_CLASS_NUMBER, textFontWeight = 300;
@@ -69,9 +69,9 @@ public abstract class PinView extends LinearLayoutCompat {
             stateDefaultBackground = a.getResourceId(R.styleable.PinView_stateDefaultBackground,
                     R.color.gray30);
             stateSuccessBackground = a.getResourceId(R.styleable.PinView_stateSuccessBackground,
-                    R.color.success);
+                    R.color.green20);
             stateErrorBackground = a.getResourceId(R.styleable.PinView_stateErrorBackground,
-                    R.color.error);
+                    R.color.red20);
 
             inputType = a.getInt(R.styleable.PinView_android_inputType, EditorInfo.TYPE_CLASS_NUMBER);
             textFontWeight = a.getInteger(R.styleable.PinView_textFontWeight, 300);

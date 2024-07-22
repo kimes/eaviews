@@ -6,7 +6,7 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:background">@drawable/bg_btn_dark</item>
         <item name="android:layout_margin">3dp</item>
-        <item name="android:textSize">@dimen/textXLarge</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/blue10</item>
         <item name="android:gravity">center</item>
         <item name="android:elevation">5dp</item>

@@ -27,6 +27,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    publishing {
+        singleVariant("fullRelease")
+    }
+
     namespace 'ph.easyaf.eaviews'
 }
 
@@ -41,16 +46,10 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.release
+            fullRelease(MavenPublication) {
+                from components.findByName('fullRelease')
 
                 group = 'ph.easyaf'
-                version = '1.0'
-            }
-            debug(MavenPublication) {
-                from components.debug
-
-                groupId = 'ph.easyaf'
                 version = '1.0'
             }
         }

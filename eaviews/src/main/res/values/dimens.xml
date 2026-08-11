@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="radiusXXSmall">3dp</dimen>
+    <dimen name="radiusXSmall">8dp</dimen>
+    <dimen name="radiusSmall">15dp</dimen>
+    <dimen name="radiusBig">20dp</dimen>
+    <dimen name="radiusXBig">30dp</dimen>
+    <dimen name="radiusMax">500dp</dimen>
 </resources>
